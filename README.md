@@ -8,10 +8,11 @@
 [Bootstrap](https://v3.bootcss.com/getting-started/)  
 [Github OAuth](https://docs.github.com/en/developers/apps/creating-an-oauth-app)  
 [MyBatis-Spring-Boot](http://mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/)  
-[flyway](https://flywaydb.org/documentation/getstarted/firststeps/maven)  
+[Thymeleaf](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#setting-attribute-values)
 ## 工具
-[Git](https://git-scm.com/download)
-
+[Git](https://git-scm.com/download)  
+[flyway](https://flywaydb.org/documentation/getstarted/firststeps/maven)  
+[Lombok](https://projectlombok.org/)
 ##脚本
 ```sql
 CREATE TABLE `user` (
