@@ -6,7 +6,6 @@ import mss.community.dto.GithubUser;
 import okhttp3.*;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
 
 /**
  *Created by MSS on 2021/3/26

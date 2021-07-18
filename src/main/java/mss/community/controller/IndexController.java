@@ -1,6 +1,6 @@
 package mss.community.controller;
 
-import mss.community.dto.QuestionDTO;
+import mss.community.dto.PaginationDTO;
 import mss.community.mapper.UserMapper;
 import mss.community.model.User;
 import mss.community.service.QuestionService;
@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -27,20 +28,24 @@ public class IndexController {
     private QuestionService questionService;
 
     @GetMapping("/")
-    public String index(HttpServletRequest request, Model model){
+    public String index(HttpServletRequest request, Model model,
+                        @RequestParam(name="page",defaultValue = "1") Integer page,
+                        @RequestParam(name="size",defaultValue = "5") Integer size){
         Cookie[] cookies= request.getCookies();
-        if(cookies!=null){
+        if(cookies!=null&&cookies.length!=0){
             for(Cookie cookie:cookies){
                 if(cookie.getName().equals("token")){
                     String token=cookie.getValue();
                     User user = userMapper.findByToken(token);
-                    request.getSession().setAttribute("User",user);
+                    if(user!=null){
+                        request.getSession().setAttribute("User",user);
+                    }
                     break;
                 }
             }
         }
-        List<QuestionDTO> questionList=questionService.list();
-        model.addAttribute("questions",questionList);
+        PaginationDTO pagination=questionService.list(page,size);
+        model.addAttribute("pagination",pagination);
         return "index";
     }
 }
