@@ -8,7 +8,8 @@
 [Bootstrap](https://v3.bootcss.com/getting-started/)  
 [Github OAuth](https://docs.github.com/en/developers/apps/creating-an-oauth-app)  
 [MyBatis-Spring-Boot](http://mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/)  
-[Thymeleaf](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#setting-attribute-values)
+[Thymeleaf](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#setting-attribute-values)  
+[Spring MVC拦截器](https://docs.spring.io/spring-framework/docs/5.0.3.RELEASE/spring-framework-reference/web.html#mvc-handlermapping-interceptor)
 ## 工具
 [Git](https://git-scm.com/download)  
 [flyway](https://flywaydb.org/documentation/getstarted/firststeps/maven)  
